@@ -1,0 +1,19 @@
+# Ignore deployment artifacts
+caldim_careers_deployment.zip
+database/full_database_dump.sql
+
+# Ignore user uploads (but keep the directory structure)
+uploads/resumes/*
+!uploads/resumes/.gitkeep
+
+# Ignore OS-specific files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Ignore local logs
+*.log
