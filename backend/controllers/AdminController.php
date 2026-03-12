@@ -31,7 +31,7 @@ class AdminController
         $appStats = $this->appModel->getStats();
         $recent = $this->appModel->getRecent(8);
         $flash = getFlash();
-        require __DIR__ . '/../views/admin/dashboard.php';
+        require __DIR__ . '/../../frontend/views/admin/dashboard.php';
     }
 
     // ── Job List ─────────────────────────────────────────────────
@@ -43,7 +43,7 @@ class AdminController
         $total = $this->jobModel->getCount([]);
         $pages = ceil($total / JOBS_PER_PAGE);
         $flash = getFlash();
-        require __DIR__ . '/../views/admin/jobs/list.php';
+        require __DIR__ . '/../../frontend/views/admin/jobs/list.php';
     }
 
     // ── Create Job Form ───────────────────────────────────────────
@@ -53,7 +53,7 @@ class AdminController
         $departments = $this->deptModel->getAll();
         $csrf = generateCsrf();
         $flash = getFlash();
-        require __DIR__ . '/../views/admin/jobs/create.php';
+        require __DIR__ . '/../../frontend/views/admin/jobs/create.php';
     }
 
     // ── Create Job POST ───────────────────────────────────────────
@@ -88,7 +88,7 @@ class AdminController
         $departments = $this->deptModel->getAll();
         $csrf = generateCsrf();
         $flash = getFlash();
-        require __DIR__ . '/../views/admin/jobs/edit.php';
+        require __DIR__ . '/../../frontend/views/admin/jobs/edit.php';
     }
 
     // ── Edit Job POST ─────────────────────────────────────────────

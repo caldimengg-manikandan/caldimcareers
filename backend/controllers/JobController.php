@@ -29,7 +29,7 @@ class JobController
         $departments = $this->deptModel->getAllWithJobCount();
         $jobStats = $this->jobModel->getStats();
         $flash = getFlash();
-        require __DIR__ . '/../views/home.php';
+        require __DIR__ . '/../../frontend/views/home.php';
     }
 
     /** iBegin Landing Page */
@@ -37,7 +37,7 @@ class JobController
     {
         $departments = $this->deptModel->getAllWithJobCount();
         $flash = getFlash();
-        require __DIR__ . '/../views/jobs/ibegin.php';
+        require __DIR__ . '/../../frontend/views/jobs/ibegin.php';
     }
 
     /** Guided Search Page */
@@ -45,7 +45,14 @@ class JobController
     {
         $departments = $this->deptModel->getAllWithJobCount();
         $flash = getFlash();
-        require __DIR__ . '/../views/jobs/guided_search.php';
+        require __DIR__ . '/../../frontend/views/jobs/guided_search.php';
+    }
+
+    /** Restart With Caldim Page */
+    public function restartWithCaldim(): void
+    {
+        $flash = getFlash();
+        require __DIR__ . '/../../frontend/views/jobs/restart.php';
     }
 
     /** Job Listing with Filters + Pagination */
@@ -75,7 +82,7 @@ class JobController
             exit;
         }
 
-        require __DIR__ . '/../views/jobs/list.php';
+        require __DIR__ . '/../../frontend/views/jobs/list.php';
     }
 
     /** Job Detail Page */
@@ -84,7 +91,7 @@ class JobController
         $job = $this->jobModel->getById($id);
         if (!$job) {
             http_response_code(404);
-            require __DIR__ . '/../views/404.php';
+            require __DIR__ . '/../../frontend/views/404.php';
             return;
         }
 
@@ -101,6 +108,6 @@ class JobController
         $related = array_slice(array_values($related), 0, 3);
 
         $flash = getFlash();
-        require __DIR__ . '/../views/jobs/detail.php';
+        require __DIR__ . '/../../frontend/views/jobs/detail.php';
     }
 }

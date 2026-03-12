@@ -15,7 +15,7 @@ function isActive(string $path, string $seg): string {
 // Fetch active application for progress tracker
 $activeApp = null;
 if (isLoggedIn()) {
-    require_once __DIR__ . '/../../models/ApplicationModel.php';
+    require_once __DIR__ . '/../../../backend/models/ApplicationModel.php';
     if (class_exists('ApplicationModel')) {
         $headerAppModel = new ApplicationModel();
         $apps = $headerAppModel->getByUser($_SESSION['user_id']);

@@ -45,7 +45,7 @@ class ApplicationController
 
         $csrf = generateCsrf();
         $flash = getFlash();
-        require __DIR__ . '/../views/apply.php';
+        require __DIR__ . '/../../frontend/views/apply.php';
     }
 
     // ── Candidate: Submit Application ────────────────────────────
@@ -104,7 +104,7 @@ class ApplicationController
         requireLogin();
         $applications = $this->appModel->getByUser($_SESSION['user_id']);
         $flash = getFlash();
-        require __DIR__ . '/../views/candidate/dashboard.php';
+        require __DIR__ . '/../../frontend/views/candidate/dashboard.php';
     }
 
     // ── Admin: All Applications ───────────────────────────────────
@@ -128,7 +128,7 @@ class ApplicationController
         $departments = $this->deptModel->getAll();
         $jobs = $this->jobModel->getAll([], 1);
         $flash = getFlash();
-        require __DIR__ . '/../views/admin/applications/list.php';
+        require __DIR__ . '/../../frontend/views/admin/applications/list.php';
     }
 
     // ── Admin: Application Detail ─────────────────────────────────
@@ -142,7 +142,7 @@ class ApplicationController
         }
         $csrf = generateCsrf();
         $flash = getFlash();
-        require __DIR__ . '/../views/admin/applications/detail.php';
+        require __DIR__ . '/../../frontend/views/admin/applications/detail.php';
     }
 
     // ── Admin: Update Status (AJAX or Form) ───────────────────────

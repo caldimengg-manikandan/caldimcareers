@@ -29,7 +29,7 @@ class AuthController
         }
         $csrf = generateCsrf();
         $flash = getFlash();
-        require __DIR__ . '/../views/auth/register.php';
+        require __DIR__ . '/../../frontend/views/auth/register.php';
     }
 
     public function registerPost(): void
@@ -80,7 +80,7 @@ class AuthController
         }
         $csrf = generateCsrf();
         $flash = getFlash();
-        require __DIR__ . '/../views/auth/login.php';
+        require __DIR__ . '/../../frontend/views/auth/login.php';
     }
 
     public function loginPost(): void
@@ -121,7 +121,7 @@ class AuthController
         }
         $csrf = generateCsrf();
         $flash = getFlash();
-        require __DIR__ . '/../views/admin/login.php';
+        require __DIR__ . '/../../frontend/views/admin/login.php';
     }
 
     public function adminLoginPost(): void

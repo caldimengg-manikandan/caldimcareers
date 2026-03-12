@@ -58,6 +58,12 @@ if ($uri === 'guided-search') {
     exit;
 }
 
+// Restart with Caldim
+if ($uri === 'restart-with-caldim') {
+    (new JobController())->restartWithCaldim();
+    exit;
+}
+
 // Public Job Listing
 if ($uri === 'jobs') {
     (new JobController())->list();
@@ -214,9 +220,10 @@ if ($uri === 'admin/export/applications') {
 
 // ── 404 Fallback ──────────────────────────────────────────────
 http_response_code(404);
-if (file_exists(__DIR__ . '/views/404.php')) {
-    require __DIR__ . '/views/404.php';
+if (file_exists(__DIR__ . '/../frontend/views/404.php')) {
+    require __DIR__ . '/../frontend/views/404.php';
 }
 else {
     echo '<h1>404 – Page Not Found</h1>';
 }
+
